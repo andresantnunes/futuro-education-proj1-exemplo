@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "d0344c1e-e48e-460f-98d2-69d838d2c131",
+		"name": "ProjetoExemplo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33856184"
+	},
+	"item": [
+		{
+			"name": "localhost:8081/cadastro",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeUsuario\":\"user\",\r\n    \"senha\":\"pass\",\r\n    \"nomePerfil\":\"ADM\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/cadastro",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"cadastro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeUsuario\":\"user\",\r\n    \"senha\":\"pass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/tarefas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJwcm9qZXRvMSIsInN1YiI6IjEiLCJleHAiOjE3MTI5MTIxNjcsImlhdCI6MTcxMjg3NjE2Nywic2NvcGUiOiJBRE0ifQ.WUMhpJCPgZ54ZW8fCZJ2z0jG-g5Q7K6ahqJ8XnWF029kASg3cU5TyUkhnvjZngRyMJADWNHxOeoKA3LnDpDvAqtL66dARaW1YVt5tUVMlMa2EYSOJJmkzWMEB8aOYfONUs5KhiJQ72qDf9mFN1DTwj193pxGnjazq6bJ58RH16Yuay908eAvyNYiTK8ioEoXSyhaiY4KAjazSTe728O9hIU5dZNHwi-BVwKc2wefbHGJe5Toulr0f_2ChrfBuaWQPOr_hp5-364TebyhURPDuBnMzDm12Ku-kDCTg9J-zN-vvNn9qdcOPREQ0hdy_zHFYzQPtFYOHz7dfC5ZeFwyvw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"titulo\":\"Tarefa\",\r\n    \"descricao\": \"Tarefa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/tarefas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tarefas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8081/tarefas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJwcm9qZXRvMSIsInN1YiI6IjEiLCJleHAiOjE3MTI5MTIxNjcsImlhdCI6MTcxMjg3NjE2Nywic2NvcGUiOiJBRE0ifQ.WUMhpJCPgZ54ZW8fCZJ2z0jG-g5Q7K6ahqJ8XnWF029kASg3cU5TyUkhnvjZngRyMJADWNHxOeoKA3LnDpDvAqtL66dARaW1YVt5tUVMlMa2EYSOJJmkzWMEB8aOYfONUs5KhiJQ72qDf9mFN1DTwj193pxGnjazq6bJ58RH16Yuay908eAvyNYiTK8ioEoXSyhaiY4KAjazSTe728O9hIU5dZNHwi-BVwKc2wefbHGJe5Toulr0f_2ChrfBuaWQPOr_hp5-364TebyhURPDuBnMzDm12Ku-kDCTg9J-zN-vvNn9qdcOPREQ0hdy_zHFYzQPtFYOHz7dfC5ZeFwyvw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/tarefas",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"tarefas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

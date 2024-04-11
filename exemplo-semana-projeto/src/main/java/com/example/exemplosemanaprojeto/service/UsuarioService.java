@@ -5,7 +5,6 @@ import com.example.exemplosemanaprojeto.datasource.entity.UsuarioEntity;
 import com.example.exemplosemanaprojeto.datasource.repository.PerfilRepository;
 import com.example.exemplosemanaprojeto.datasource.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,7 +35,7 @@ public class UsuarioService {
         );
         usuario.setPerfil(
                 perfilRepository.findByNome(inserirUsuarioRequest.nomePerfil())
-                        .orElseThrow(()-> new RuntimeException("Perfil inválido ou inexistente"))
+                        .orElseThrow(() -> new RuntimeException("Perfil inválido ou inexistente"))
         );
 
         usuarioRepository.save(usuario);
