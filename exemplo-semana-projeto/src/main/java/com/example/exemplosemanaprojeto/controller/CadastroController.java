@@ -8,6 +8,7 @@ import com.example.exemplosemanaprojeto.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,7 +20,7 @@ public class CadastroController {
 
     @PostMapping("/cadastro")
     public ResponseEntity<String> novoUsuario(
-            @RequestBody InserirUsuarioRequest inserirUsuarioRequest
+            @Validated @RequestBody InserirUsuarioRequest inserirUsuarioRequest
     ) {
 
         usuarioService.cadastraNovoUsuario(inserirUsuarioRequest);

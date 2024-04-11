@@ -11,6 +11,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -27,6 +28,8 @@ public class TarefaService {
         Long usuarioId = Long.valueOf( // tranforma o valor do campo "sub" em Long
                 tokenService.buscaCampo(token, "sub")
         );
+
+        LocalDate.now();
 
         List<TarefaEntity> listaTarefas = tarefaRepository.findAllByUsuarioId(usuarioId);
 

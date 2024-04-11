@@ -1,4 +1,4 @@
-package com.example.exemplosemanaprojeto.infra;
+package com.example.exemplosemanaprojeto.infra.security;
 
 
 import com.nimbusds.jose.jwk.JWK;
