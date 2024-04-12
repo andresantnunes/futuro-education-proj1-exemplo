@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -45,6 +46,12 @@ public class TarefaService {
             InserirTarefaRequest incluiTarefaRequest,
             String token
     ) {
+
+        //Valida se perfil tem acesso a funcionalidade
+        String nomePerfil =  tokenService.buscaCampo(token, "token");
+        if (Objects.equals(nomePerfil, "USUARIO")){
+            throw new RuntimeException("Usuario não tem acesso a essa funcionalidade");
+        }
 
         Long usuarioId = Long.valueOf( // tranforma o valor do campo "sub" em Long
                 tokenService.buscaCampo(token, "sub")
